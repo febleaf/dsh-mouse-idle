@@ -10,7 +10,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url'
 import { loadDshPackage } from '../dsh-import.mjs'
 import { compileWindows } from '../worker.mjs'
 
-const pluginPath = await realpath(join(process.env.DSH_PROFILE_DIR, 'node_modules', '@local/dsh-mouse-idle', 'index.js'))
+const pluginPath = await realpath(join(process.env.DSH_PROFILE_DIR, 'node_modules', '@febleaf/dsh-mouse-idle', 'index.js'))
 const plugin = await import(pathToFileURL(pluginPath).href)
 const { Context } = await loadDshPackage('@deepseek-ai/cordis')
 const systemPrompt = await loadDshPackage('@deepseek-ai/dsh-system-prompt')

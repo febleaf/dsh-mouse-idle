@@ -1,0 +1,27 @@
+name: Check plugin
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Match the release tag to the package version
+        if: github.ref_type == 'tag'
+        shell: pwsh
+        run: |
+          $version = node -p "require('./package.json').version"
+          if ($env:GITHUB_REF_NAME -cne "v$version") { throw "Expected tag v$version" }
+      - run: npm test
+      - run: npm pack --dry-run

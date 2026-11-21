@@ -1,5 +1,5 @@
 window.__ModuleLoader__.load({
-  id: '@local/dsh-mouse-idle',
+  id: '@febleaf/dsh-mouse-idle',
   factory(require) {
     const React = require('react')
     const h = React.createElement
@@ -109,7 +109,7 @@ window.__ModuleLoader__.load({
         ctx.effect(() => ctx.locale.register(namespace, messages))
         const form = ctx.configForms.get(namespace)
         ctx.effect(() => ctx.configForms.whileServed([namespace], () => ctx.slots.inject('plugins.bundle.config', () => ctx.slots.register({
-          name: 'plugins.bundle.config', key: '@local/dsh-mouse-idle', locale: namespace,
+          name: 'plugins.bundle.config', key: '@febleaf/dsh-mouse-idle', locale: namespace,
         }, props => h(Settings, { ...props, form })))))
         ctx.slots.inject('tool.call.toolview', () => ctx.slots.register({
           name: 'tool.call.toolview', key: 'windows_desktop_control', locale: namespace,

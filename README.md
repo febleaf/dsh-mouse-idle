@@ -2,21 +2,39 @@
 
 这个 Windows 插件让 DeepSeek Harness（DSH）等你用完鼠标，再点击、拖拽、滚动或切换窗口。默认等待 **连续空闲 3 秒**。移动鼠标、按下或松开鼠标按钮、滚动滚轮都会重新计时。按住按钮时，插件会一直等到松开，再等待完整的空闲时间。
 
-## 安装 v0.1.0
+## 安装
 
-在 Windows 上打开 DSH，进入「插件」→「添加插件」，粘贴下面的发布包地址并确认安装。安装完成后，在插件列表打开「Windows 鼠标空闲控制」。
+适用于已解锁的 Windows 桌面，已测试 DSH Desktop `0.2.2-rc.5`。插件通过 GitHub 发布，包名为 `@febleaf/dsh-mouse-idle`。已安装 `v0.1.0` 的用户请先按下方「从旧版迁移」操作。
+
+在 DSH 的「插件」→「添加插件」粘贴以下地址，确认安装 `v0.2.0`。
 
 ```text
-https://github.com/febleaf/dsh-mouse-idle/releases/download/v0.1.0/dsh-mouse-idle-0.1.0.tgz
+github:febleaf/dsh-mouse-idle#v0.2.0
 ```
 
-使用 DSH CLI 的用户也可以用下面的命令安装到 `web` 配置。使用其他 CLI 配置时，把 `web` 换为对应的配置名。
+使用 CLI 时，以下命令会安装到 `web` 配置。
 
 ```powershell
-dsh plugin --profile web add "https://github.com/febleaf/dsh-mouse-idle/releases/download/v0.1.0/dsh-mouse-idle-0.1.0.tgz"
+dsh plugin --profile web add "github:febleaf/dsh-mouse-idle#v0.2.0"
 ```
 
-已测试 DSH Desktop `0.2.2-rc.5`，插件声明的兼容范围为 `>=0.2.2-rc.5 <0.3.0-0`。桌面操作需要已解锁的 Windows 交互会话。插件启动时使用系统的 .NET Framework 4.x C# 编译器（`csc.exe`）在临时目录编译鼠标监视程序。
+也可以通过「发现」页安装。在「插件」→「实验性插件」开启「自定义插件索引」，进入「发现」→「添加索引源」，粘贴下方地址，搜索「Windows 鼠标空闲控制」并安装。发行包可从 [GitHub Releases](https://github.com/febleaf/dsh-mouse-idle/releases) 下载。
+
+```text
+https://raw.githubusercontent.com/febleaf/dsh-mouse-idle/main/market/index.json
+```
+
+### 从旧版迁移
+
+`v0.1.0` 使用旧包名 `@local/dsh-mouse-idle`。先记下自定义的空闲秒数，在「插件」中移除旧包，再按上面的地址安装新版。按 DSH 提示重启后，查询空闲状态，核对 `idleMs`。例如，5 秒对应 `5000`。
+
+CLI 用户可在安装前运行以下命令移除同一配置中的旧包。
+
+```powershell
+dsh plugin --profile web remove @local/dsh-mouse-idle
+```
+
+插件声明的 DSH 兼容范围为 `>=0.2.2-rc.5 <0.3.0-0`。启动时会使用系统的 .NET Framework 4.x C# 编译器（`csc.exe`）在临时目录编译鼠标监视程序。
 
 ## 使用示例
 

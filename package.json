@@ -1,14 +1,18 @@
 {
-  "name": "@local/dsh-mouse-idle",
-  "version": "0.1.0",
+  "name": "@febleaf/dsh-mouse-idle",
+  "version": "0.2.0",
+  "description": "Windows desktop control with a configurable mouse idle interval for DeepSeek Harness.",
+  "author": "febleaf",
   "license": "MIT",
+  "keywords": ["deepseek-harness", "dsh-plugin", "cordis", "windows", "mouse-idle"],
   "repository": { "type": "git", "url": "git+https://github.com/febleaf/dsh-mouse-idle.git" },
   "homepage": "https://github.com/febleaf/dsh-mouse-idle#readme",
-  "description": "Windows desktop control with a configurable mouse idle interval for DeepSeek Harness.",
+  "bugs": { "url": "https://github.com/febleaf/dsh-mouse-idle/issues" },
   "type": "module",
   "engines": { "dsh": ">=0.2.2-rc.5 <0.3.0-0" },
   "exports": {
     ".": "./index.js",
+    "./package.json": "./package.json",
     "./client": "./client.js",
     "./locale/*.json": "./locale/*.json",
     "./icon": "./icon.svg"
