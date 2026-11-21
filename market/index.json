@@ -1,0 +1,31 @@
+{
+  "format": 1,
+  "title": { "en": "febleaf’s DSH plugins", "zh": "febleaf 的 DSH 插件" },
+  "plugins": [
+    {
+      "name": "@febleaf/dsh-mouse-idle",
+      "title": { "en": "Windows mouse idle", "zh": "Windows 鼠标空闲控制" },
+      "description": {
+        "en": "Wait for the mouse to be idle before DSH clicks, drags, scrolls, or activates a window.",
+        "zh": "鼠标持续空闲后，DSH 才会点击、拖拽、滚动或切换前台窗口。"
+      },
+      "icon": "../icon.svg",
+      "author": "febleaf",
+      "homepage": "https://github.com/febleaf/dsh-mouse-idle#readme",
+      "repository": { "url": "https://github.com/febleaf/dsh-mouse-idle" },
+      "keywords": ["deepseek-harness", "dsh-plugin", "cordis", "windows", "mouse-idle"],
+      "versions": [
+        {
+          "version": "0.2.0",
+          "publishTimestamp": 1795237127,
+          "engines": { "dsh": ">=0.2.2-rc.5 <0.3.0-0" },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/febleaf/dsh-mouse-idle.git",
+            "commit": "5f9455018b1fe005540f046fd1d970a621c279cb"
+          }
+        }
+      ]
+    }
+  ]
+}
