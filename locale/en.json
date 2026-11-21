@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Windows mouse idle",
+    "description": "Wait for the mouse to be idle before DSH clicks, drags, scrolls, or activates a window."
+  }
+}

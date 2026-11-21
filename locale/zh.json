@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Windows 鼠标空闲控制",
+    "description": "鼠标持续空闲后，DSH 才会点击、拖拽、滚动或切换前台窗口。"
+  }
+}
